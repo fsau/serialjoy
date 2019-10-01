@@ -78,11 +78,11 @@ To run the host software, your user must have read/write access to uinput device
 
 ### Available actions
 
-- Simple actions "a":
+- Simple actions "a":  
 a = [a..z]: Buttons press (up to 26 buttons per controller)
 a = [A..Z]: Buttons release (up to 26 buttons per controller)
 
-- Complex actions "axx":
+- Complex actions "axx":  
 a = [a..zA..Z]: Action ID (still to be defined), for example an analog axis
 x = [0x40..0x5F]: Action data (less significant 5 bits of each char) = 10 bits
 
