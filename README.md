@@ -88,7 +88,7 @@ x = [0x40..0x5F]: Action data (less significant 5 bits of each char) = 10 bits
 
 ### Packet format
 
-- From adapter to host:
+- From adapter to host:  
 1. "!n", where n = [0..9]: Create joystick device n
 2. "^n", where n = [0..9]: Destroy joystick device n
 3. "a", where a = [a..zA..Z]: Send simple action a to device 0 (LEGACY)
@@ -98,11 +98,11 @@ complex action axx to device n
 6. "s" where s is a null-terminated string: Preprogrammed string (only if host
 asks)
 
-- From host to adapter:
+- From host to adapter:  
 1. "d": Force adapter to (re)create connected devices
 2. "v": Return preprogrammed string
 
-- Handshake protocol:
+- Handshake protocol:  
 1. "#": OK
 2. "%": Not OK/cancel
 3. "?": Are you there? (return OK)
