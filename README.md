@@ -1,5 +1,3 @@
-# Serialjoy
-
 <img src="doc/serialjoy.svg" width="400">
 
 ## What is this?
