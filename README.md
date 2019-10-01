@@ -18,7 +18,7 @@ Although the project is composed of two parts, the name `serialjoy` will always 
 
 ### Some implementation details
 
-The host talks to the adapter via a serial port (like `/dev/ttyUSB0` if you're using an USB-Serial adapter) using only printable characters that represent the state of a button (uppercase is pressed, lowercase is released) or some other data (analog axes, create controller, etc). More details on the communication protocol is described below and is subject to changes.
+The host talks to the adapter via a serial port (like `/dev/ttyUSB0` if you're using an USB-Serial adapter) using only printable characters that represent the state of a button (uppercase is pressed, lowercase is released) or some other data (analog axes, create controller, etc). More details on the communication protocol is described below and is subject to changes. No flow control is used, only TX/RX pins.
 
 ## Contributing
 
