@@ -1,4 +1,6 @@
+<p align="center">
 <img src="doc/serialjoy.svg" width="400">
+</p>
 
 ## What is this?
 
