@@ -79,19 +79,16 @@ To run the host software, your user must have read/write access to uinput device
 ### Available actions
 
 - Simple actions "a":
-
 a = [a..z]: Buttons press (up to 26 buttons per controller)
 a = [A..Z]: Buttons release (up to 26 buttons per controller)
 
 - Complex actions "axx":
-
 a = [a..zA..Z]: Action ID (still to be defined), for example an analog axis
 x = [0x40..0x5F]: Action data (less significant 5 bits of each char) = 10 bits
 
 ### Packet format
 
 - From adapter to host:
-
 1. "!n", where n = [0..9]: Create joystick device n
 2. "^n", where n = [0..9]: Destroy joystick device n
 3. "a", where a = [a..zA..Z]: Send simple action a to device 0 (LEGACY)
@@ -102,12 +99,10 @@ complex action axx to device n
 asks)
 
 - From host to adapter:
-
 1. "d": Force adapter to (re)create connected devices
 2. "v": Return preprogrammed string
 
 - Handshake protocol:
-
 1. "#": OK
 2. "%": Not OK/cancel
 3. "?": Are you there? (return OK)
@@ -118,14 +113,10 @@ adapter doesn't responds to "?", then go to legacy mode
 ## To do
 
 - Create a wiki/add documentation (IMPORTANT!)
-
 - Use a simpler received data <-> input action dictionary, not a switch
   statement within a function within a .c file (maybe with #define or an
   external configuration file)
-
 - Automatic identification of the serial port
-
 - Automatic service (daemon) which runs the program when an adapter is detected
   and starts at boot/user login.
-
 - Change read-process-send loop to multiple simultaneous threads
