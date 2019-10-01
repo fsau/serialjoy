@@ -74,7 +74,6 @@ To run the host software, your user must have read/write access to uinput device
 ## Communication Protocol
 
 - Valid characters: Every printable character (from 0x20 up to 0x7E)
-
 - Packets size: Strings of 1 to 5 chars/bytes.
 
 ### Available actions
@@ -82,13 +81,11 @@ To run the host software, your user must have read/write access to uinput device
 - Simple actions "a":
 
 a = [a..z]: Buttons press (up to 26 buttons per controller)
-
 a = [A..Z]: Buttons release (up to 26 buttons per controller)
 
 - Complex actions "axx":
 
 a = [a..zA..Z]: Action ID (still to be defined), for example an analog axis
-
 x = [0x40..0x5F]: Action data (less significant 5 bits of each char) = 10 bits
 
 ### Packet format
@@ -96,31 +93,23 @@ x = [0x40..0x5F]: Action data (less significant 5 bits of each char) = 10 bits
 - From adapter to host:
 
 1. "!n", where n = [0..9]: Create joystick device n
-
 2. "^n", where n = [0..9]: Destroy joystick device n
-
 3. "a", where a = [a..zA..Z]: Send simple action a to device 0 (LEGACY)
-
 4. "na", where n = [0..9] and a = [a..zA..Z]: Send simple action a to device n
-
 5. "n:axx" where n = [0..9], a = [a..zA..Z] and each x = [0x40..0x5F]: Send
 complex action axx to device n
-
 6. "s" where s is a null-terminated string: Preprogrammed string (only if host
 asks)
 
 - From host to adapter:
 
 1. "d": Force adapter to (re)create connected devices
-
 2. "v": Return preprogrammed string
 
 - Handshake protocol:
 
 1. "#": OK
-
 2. "%": Not OK/cancel
-
 3. "?": Are you there? (return OK)
 
 When adapter sends "!n" (create device), host must answer OK when successful. If
