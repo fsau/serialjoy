@@ -1,6 +1,6 @@
 # Serialjoy
 
-<img src="doc/serialjoy.svg" width="200">
+<img src="doc/serialjoy.svg" width="400">
 
 ## What is this?
 
