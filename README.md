@@ -109,16 +109,3 @@ asks)
 
 When adapter sends "!n" (create device), host must answer OK when successful. If
 adapter doesn't responds to "?", then go to legacy mode
-
-## To do
-
-- Create a wiki/add documentation/how-to (IMPORTANT!)
-- Use a real list instead a "to do" in `README.md` (meta)
-- Use a simpler received data <-> input action dictionary, not a switch
-  statement within a function within a .c file (maybe with #define or an
-  external configuration file)
-- Automatic identification of the serial port
-- Automatic service (daemon) which runs the program when an adapter is detected
-  and starts at boot/user login.
-- Change read-process-send loop to multiple simultaneous threads
-- Possible windows port using dinput.h/MinGW
